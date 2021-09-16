@@ -21,66 +21,138 @@ An excellent front-end solution for enterprise applications.
 
 </div>
 
-- Preview - [https://antd-admin.zuiidea.com](https://antd-admin.zuiidea.com)
-- Documentation - [https://doc.antd-admin.zuiidea.com](https://doc.antd-admin.zuiidea.com)
-- FAQ - [https://doc.antd-admin.zuiidea.com/#/faq](https://doc.antd-admin.zuiidea.com/#/faq)
-- ChangeLog - [https://doc.antd-admin.zuiidea.com/#/change-log](https://doc.antd-admin.zuiidea.com/#/change-log)
+## 一、AntD-Admin简介及使用
+### **背景介绍**
 
-English | [简体中文](./README-zh_CN.md) 
+AntD-Admin 是基于 Ant Design 设计体系的 一套优秀的中后台前端解决方案。
 
-## Features
+### **特性**
 
-- Internationalization, extracting translation fields from source code, loading language packs on demand
-- Dynamic permissions, different permissions for different menus
-- Elegant and beautiful, Ant Design system
-- Mock data, local data debugging
+- 国际化，源码中抽离翻译字段，按需加载语言包
 
+- 动态权限，不同权限对应不同菜单
 
-## Usage
+- 优雅美观，Ant Design 设计体系
 
-1. Clone project code.
+- Mock 数据，本地数据调试
 
-```bash
-git clone https://github.com/zuiidea/antd-admin.git my-project
-cd my-project
-```
+项目官网：https://doc.antd-admin.zuiidea.com/#/
 
-2. Installation dependence.
+源项目地址：https://github.com/zuiidea/antd-admin
 
-```bash
-yarn install
-```
+### **最佳实践**
 
-Or
+1.1 antD-Admin的本地发布
 
-```bash
-npm install
-```
-
-3. Start local server.
-
-```bash
+``` bash
+$ yarn install
 npm run start
 ```
 
-4. After the startup is complete, open a browser and visit [http://localhost:7000](http://localhost:7000), If you need to change the startup port, you can configure it in the `.env` file.
+1.2 antD-Admin的线上网站发布
 
+见下一章。
 
-> More instructions at [documentation](https://doc.antd-admin.zuiidea.com)。
+## 二、将antD-Admin项目通过云开发平台，快速发布为网站
 
+### **背景介绍**
+云开发平台是阿里云面向广大开发者提供的免费云上研发工作平台，可以实现开发的全流程。关于云开发平台的介绍：https://help.aliyun.com/product/161245.html。
 
-## Browsers support
+### **最佳实践**
 
-Modern browsers.
+**1.创建antd代码项目**
 
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera |
-| --------- | --------- | --------- | --------- | --------- | 
-|IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions
+直接fork本项目到自己的GitHub账号下。
 
-## Contributing
+**2.打开云开发平台，完成阿里云账号注册登陆，同意云开发平台服务协议** https://workbench.aliyun.com/application
 
-We very much welcome your contribution, you can build together with us in the following ways :smiley: 
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/sign.png" width="400">
 
-- Use Ant Design Pro in your daily work.
-- Submit [GitHub issues](http://github.com/zuiidea/antd-admin/issues)s to report bugs or ask questions.
-- Propose [Pull Request](http://github.com/zuiidea/antd-admin/pulls) to improve our code.
+**3.创建云开发平台-前端部署应用**
+
+3.1 创建前端应用
+
+依次点击「应用列表」「前端应用」「新建前端应用」按钮。首先绑定GitHub帐号，允许云开发平台构建、发布你的GitHub代码为可访问的网站。
+
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/create_0.png" width="200">
+
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/oauth.png" width="200">
+
+选择第一步中的代码仓库、主干分支等，并点击下一步。主干分支一般指的是代码的master或main等分支。
+
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/antD-Admin/antD_1.png" width="300">
+
+填写基本信息并点击「完成」。稍等片刻创建成功后，将进入到应用部署界面。
+
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/antD-Admin/antD_2.png" width="600">
+
+3.2 开发部署配置
+
+填写日常/线上环境的部署配置
+按照"?"提示，依次填写部署配置信息。其中：
+- 本项目资源路径应填写为"./docs",因为本项目静态资源默认存储在根目录下的docs文件夹中
+
+- 如需使用自定义域名访问，可将自定义域名填入对应位置，并在部署成功后，根据步骤3.4进行域名解析后实现自定义域名访问</br>
+  <img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/antD-Admin/antD_3.png" width="400">
+
+3.3 进行项目的部署和查看
+
+依次点击「部署」「确定」，即可启动日常/线上环境的发布流程。对于每个代码分支，要求先发布日常环境，再发布线上。若不需多套环境，则可以只使用日常环境，或者发布一次日常环境后，仅使用线上环境即可。
+
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/deploy.png" width="300">
+
+3.3.1 部署完成，查看部署结果
+
+访问**测试域名**或者**自定义域名**，以下以测试域名为例
+
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/antD-Admin/antD_4.png" width="650">
+
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/antD-Admin/antD_5.png" width="650">
+
+3.3.2 在部署完成后，部署状态会显示为“已部署”。且部署网站的记录和过程，也会被完整记录下来：
+
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/docs/create4.png" width="600">
+
+3.3.3可点击部署记录的「查看结果」来查看部署到OSS存储中的静态资源。
+
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/antD-Admin/antD_6.png" width="400">
+
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/result_download.png" width="350">
+
+3.3.4 可点击部署记录的「查看日志」查看部署的详细过程，并在部署发生错误时，精确定位学习错误情况。
+
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/antD-Admin/antD_7.png" width="400">
+
+部署操作可以在每次更新内容并push后再次进行，实现静态网站内容的按需实时更新。
+
+3.4 将OSS存储中的项目发布为网站链接
+
+3.4.1 解析自己的域名到OSS Bucket的访问域名上
+
+打开自己域名的DNS解析控制台，使用阿里云域名或其它提供商的域名均可，此处以阿里云为例：
+
+首先，找到自己要解析的域名，添加/修改一条解析记录：
+
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/cname.png" width="650">
+
+如下图所示，配置CNAME、自己的域名、记录值：
+
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/cname_2.png" width="400">
+
+记录值查看方法示意图：
+
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/oss_domain.png" width="600">
+
+完成配置后，稍等片刻，确定使用https://zijian.aliyun.com/ ，或者ping/dig/nslookup等指令可以查找到本域名的解析情况。
+
+3.4.2 当URL仅访问目录而非目录下的HTML文件时，由OSS托管路由自动定向至目录下的指定HTML文件
+
+某些前端项目生成的静态代码，其HTML中嵌入的链接地址是不含index.html的。这要求放置HTML文件的存储，或NGINX服务器等，有将裸访问路径自动对应到具体HTML文件的能力。
+
+OSS Bucket具有该托管能力，需要在使用的OSS Bucket内，选择「基础设置」「静态页面」，并如下图所示，填写默认首页为index.html，开通子目录首页功能，并点击「保存」。
+
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/oss_index.png" width="350">
+
+3.5 （可选）使用CDN加速域名访问，节约流量费用
+
+可点击「部署配置」中的「如何配置CDN加速」，将自己的域名与CDN加速绑定，从而加速网站访问。
